@@ -1,0 +1,89 @@
+header {
+    background: linear-gradient(135deg, #000, #222);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+header h3 {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 20px; /* not too big */
+}
+
+.about {
+    max-width: 500px;
+    margin: 30px auto;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.about h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* small line under title */
+.about h2::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: black;
+    margin: 8px auto 0;
+}
+
+.about h3 {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+header, .about {
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery {
+    column-count: 3;          /* number of columns */
+    column-gap: 15px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;             /* keeps original size */
+    margin-bottom: 15px;
+    border-radius: 10px;
+    break-inside: avoid;      /* 🔥 prevents gaps */
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
